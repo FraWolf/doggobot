@@ -4,7 +4,7 @@
   "description": "This bot sends cute doggo photos",
   "main": "main.js",
   "scripts": {
-    "dev": "nodemon app.js",
+    "start": "nodemon app.js",
     "bot:up": "docker-compose up -d",
     "bot:update": "docker-compose exec bot sh -c 'yarn install'",
     "bot:stop": "docker-compose stop",
