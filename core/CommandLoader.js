@@ -30,10 +30,7 @@ module.exports = class CommandLoader {
 
       // Load all commands
       await rest.put(
-        Routes.applicationGuildCommands(
-          this.client.Settings.client_id,
-          this.client.Settings.default_guild_id
-        ),
+        Routes.applicationCommands(this.client.Settings.client_id),
         {
           body: slashCommands,
         }
