@@ -48,4 +48,12 @@ module.exports = class Utils {
       return req;
     }
   }
+
+  async getDoggo() {
+    const doggo = await this.request(
+      "https://shibe.online/api/shibes?count=1",
+      true
+    );
+    return doggo[0];
+  }
 };
