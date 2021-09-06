@@ -6,15 +6,14 @@ const CommandLoader = require("./CommandLoader");
 
 const Utils = require("./Utils");
 const Settings = require("./Settings");
-const DatabaseHandler = require("./Database");
 
-const { OWNER_ID } = process.env;
+const { OWNER_ID, ADMINS_ID } = process.env;
 
-module.exports = class BotClient extends Client {
+module.exports = class DoggoClient extends Client {
   constructor({ ownerId, admins, intents }) {
     super({
       ownerId: ownerId || OWNER_ID,
-      admins: admins || [],
+      admins: admins || ADMINS_ID,
       intents,
     });
   }
@@ -26,7 +25,6 @@ module.exports = class BotClient extends Client {
     new CommandLoader(this, token);
     new CommandHandler(this);
     new EventHandler(this);
-    new DatabaseHandler(this);
 
     // Login on Discord
     return super.login(token);
