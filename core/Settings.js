@@ -4,6 +4,6 @@ module.exports = class Settings {
   }
 
   // Basic bot required informations
-  client_id = "BOT_CLIENT_ID";
-  default_guild_id = "DEFAULT_GUILD_ID"; // @Note: The default guild id is for testing slash commands before you set it to global
+  client_id = "726497084059942933";
+  default_guild_id = "868169366259257365"; // @Note: The default guild id is for testing slash commands before you set it to global
 };
