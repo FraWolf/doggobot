@@ -1,14 +1,19 @@
 {
-  "name": "discordjs-v13-template",
+  "name": "doggobot",
   "version": "1.0.0",
-  "description": "Template repository for initial bot making with DiscordJS v13 library",
+  "description": "This bot sends cute doggo photos",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "dev": "nodemon app.js",
+    "bot:up": "docker-compose up -d",
+    "bot:update": "docker-compose exec bot sh -c 'yarn install'",
+    "bot:stop": "docker-compose stop",
+    "bot:rebuild": "yarn bot:clean && yarn bot:up",
+    "bot:clean": "docker-compose down --rmi all"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FraWolf/discordjs-v13-template.git"
+    "url": "git+https://github.com/FraWolf/doggobot.git"
   },
   "keywords": [
     "DiscordJS",
@@ -18,13 +23,15 @@
   "author": "Francesco Lombardo <frawolf@outlook.it>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FraWolf/discordjs-v13-template/issues"
+    "url": "https://github.com/FraWolf/doggobot/issues"
   },
-  "homepage": "https://github.com/FraWolf/discordjs-v13-template#readme",
+  "homepage": "https://github.com/FraWolf/doggobot#readme",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "discord.js": "^13.1.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.0.0",
+    "nodemon": "^2.0.12"
   }
 }
